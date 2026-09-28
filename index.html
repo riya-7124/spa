@@ -5,19 +5,16 @@
 </head>
 <body>
 
-<!-- LEAD PAGE -->
 <div id="leadPage">
     <h1>Term Insurance Calculator</h1>
     <button id="leadBtn">Calculate Now</button>
 </div>
 
-<!-- QUOTE PAGE -->
 <div id="quotePage" style="display:none;">
     <h1>We have another plan for you</h1>
     <button id="quoteBtn">Continue For Savings Plan</button>
 </div>
 
-<!-- RIDER PAGE -->
 <div id="riderPage" style="display:none;">
     <h1>Select Riders for Your Plan</h1>
     <button id="riderBtn">Proceed</button>
@@ -26,206 +23,228 @@
 <script>
 window.dataLayer = window.dataLayer || [];
 
-/* ADDED FOR SPA ROUTING */
-history.replaceState({},'', '/term-insurance');
-
-function navigate(pageId,url){
- history.pushState({},'',url);
- showPage(pageId);
-}
-
-window.onpopstate=function(){
- if(location.pathname.includes('/quote')){
-   showPage('quotePage');
- }
- else if(location.pathname.includes('/rider')){
-   showPage('riderPage');
- }
- else{
-   showPage('leadPage');
- }
-};
-
-/* ---------------- LEAD PAGE LOAD ---------------- */
-window.dataLayer.push({
-    event: "term_leadpageload",
-    businessUnit: "mlicore",
-    deviceType: "desktop",
-    influencerCategory: "website direct",
-    influencerChannel: "167",
-    influencerCompanyCode: "direct natural",
-    influencerSourceCode: "online application(neo)",
-    isDirect: "y",
-    journey: "ecomm",
-    networkType: "4g",
-    pageName: "mlicore|journey|term|lead",
-    pageSubType: "term",
-    pageType: "journey",
-    pageUrlCustom: "https://www.axismaxlife.com/term-insurance-plans/premium-calculator",
-    stage: "term_leadpageload",
-    userId: "Njc4OTAwOTg3Ng==",
-    utmCode: "1111"
-});
-
-/* ---------------- LEAD BUTTON ---------------- */
-document.getElementById("leadBtn").onclick = function() {
-
-window.dataLayer.push({
-event:"term_leadcreated",
-stage:"term_leadcreated",
-age:"21",
-ageBracket:"18-24",
-businessUnit:"mlicore",
-country:"India",
-countryCode:"+91",
-deviceType:"desktop",
-dob:"MTIvMDMvMjAwNQ==",
-equoteNo:"1860WFFU",
-gender:"M",
-id:"s8RRTUV...",
-incomeRange:"<5",
-influencerCategory:"website direct",
-influencerChannel:"167",
-influencerCompanyCode:"direct natural",
-influencerSourceCode:"online application(neo)",
-isDirect:"y",
-isExistingCustomer:"n",
-journey:"ecomm",
-leadSource:"Term Lead Page",
-leadSourcePagePath:"https://www.axismaxlife.com/term-insurance-plans/premium-calculator",
-networkType:"4g",
-nriStatus:"n",
-pageName:"mlicore|journey|term|quote",
-pageSubType:"term",
-pageType:"journey",
-pageUrlCustom:"https://www.axismaxlife.com/term-insurance-plans/premium-calculator",
-phoneNumber:"Njc4OTAwOTg3Ng==",
-smokerStatus:"n",
-userId:"Njc4OTAwOTg3Ng==",
-utmCode:"1111"
-});
-
-/* ONLY CHANGED showPage -> navigate */
-navigate("quotePage","/term-insurance/quote");
-
-window.dataLayer.push({
-event:"term_quotepageload",
-age:"21",
-ageBracket:"18-24",
-businessUnit:"mlicore",
-country:"India",
-countryCode:"+91",
-cwylCode:"LJiQ53zKk70pX+lho2xkcg==",
-deviceType:"desktop",
-dob:"MTIvMDMvMjAwNQ==",
-education:"tenthpass",
-equoteNo:"1860WFFU",
-gender:"M",
-incomeProof:"n",
-incomeRange:"<5",
-influencerCategory:"website direct",
-influencerChannel:"167",
-influencerCompanyCode:"direct natural",
-influencerSourceCode:"online application(neo)",
-isDiabetic:"n",
-isDirect:"y",
-isExistingCustomer:"n",
-journey:"ecomm",
-leadId:"94111860",
-maritalStatus:"single",
-networkType:"4g",
-nriStatus:"n",
-occupation:"selfEmployed",
-pageName:"mlicore|journey|term|quote",
-pageSubType:"term",
-pageType:"journey",
-pageUrlCustom:"https://www.axismaxlife.com/term-insurance-plans/premium-calculator",
-paymentType:"regular-pay",
-preferredLanguage:"hindi",
-productCode:"TSTRCR",
-productSelected:"Axis Max Life Smart Term Plan Plus",
-productVariant:"life cover",
-smokerStatus:"n",
-stage:"term_quotepageload",
-userId:"Njc4OTAwOTg3Ng==",
-utmCode:"1111"
-});
-};
-
-/* ---------------- QUOTE BUTTON ---------------- */
-document.getElementById("quoteBtn").onclick = function() {
-
-window.dataLayer.push({
-event:"term_quoteplanproceed",
-stage:"term_quoteplanproceed",
-age:"21",
-leadId:"94113053",
-pageName:"mlicore|journey|term|quote",
-productCode:"TSTRCR",
-productSelected:"Axis Max Life Smart Term Plan Plus",
-productVariant:"life cover",
-businessUnit:"mlicore",
-userId:"Njc4OTAwOTg3Ng==",
-utmCode:"1111"
-});
-
-/* ONLY CHANGED showPage -> navigate */
-navigate("riderPage","/term-insurance/rider");
-
-window.dataLayer.push({
-event:"term_riderpageload",
-stage:"term_riderpageload",
-age:"21",
-annualPremium:"4745.51",
-businessUnit:"mlicore",
-leadId:"94113053",
-pageName:"mlicore|journey|term|rider",
-pageSubType:"term",
-pageType:"journey",
-paymentTerm:"39",
-premium:"417.605",
-productCode:"TSTRCR",
-productSelected:"Axis Max Life Smart Term Plan Plus",
-productVariant:"life cover",
-sumAssured:"50 Lakhs",
-sumAssuredAbsolute:"5000000",
-userId:"Njc4OTAwOTg3Ng==",
-utmCode:"1111"
-});
-};
-
-/* ---------------- RIDER BUTTON ---------------- */
-document.getElementById("riderBtn").onclick = function() {
-
-window.dataLayer.push({
-event:"term_quotecreated",
-stage:"term_quotecreated",
-age:"21",
-annualPremium:"4745.51",
-businessUnit:"mlicore",
-leadId:"94113053",
-pageName:"mlicore|journey|term|rider",
-premium:"439.135",
-riderStatus:"y",
-riderWop:"y",
-smart_cover:"n",
-sumAssured:"50 Lakhs",
-sumAssuredAbsolute:"5000000",
-totalPremiumWithoutGst:"439.135",
-userId:"Njc4OTAwOTg3Ng==",
-utmCode:"1111"
-});
-
-alert("Funnel Complete!");
-};
-
-/* ---------------- PAGE SWITCH FUNCTION ---------------- */
 function showPage(pageId) {
- document.getElementById("leadPage").style.display = "none";
- document.getElementById("quotePage").style.display = "none";
- document.getElementById("riderPage").style.display = "none";
- document.getElementById(pageId).style.display = "block";
+    document.getElementById("leadPage").style.display = "none";
+    document.getElementById("quotePage").style.display = "none";
+    document.getElementById("riderPage").style.display = "none";
+    document.getElementById(pageId).style.display = "block";
 }
+
+function navigate(pageId, url) {
+    history.pushState({}, "", url);
+    showPage(pageId);
+}
+
+function fireLeadPageLoad() {
+    window.dataLayer.push({
+        event: "term_leadpageload",
+        businessUnit: "mlicore",
+        deviceType: "desktop",
+        influencerCategory: "website direct",
+        influencerChannel: "167",
+        influencerCompanyCode: "direct natural",
+        influencerSourceCode: "online application(neo)",
+        isDirect: "y",
+        journey: "ecomm",
+        networkType: "4g",
+        pageName: "mlicore|journey|term|lead",
+        pageSubType: "term",
+        pageType: "journey",
+        pageUrlCustom: "https://www.axismaxlife.com/term-insurance-plans/premium-calculator",
+        stage: "term_leadpageload",
+        userId: "Njc4OTAwOTg3Ng==",
+        utmCode: "1111"
+    });
+}
+
+function fireLeadCreated() {
+    window.dataLayer.push({
+        event: "term_leadcreated",
+        stage: "term_leadcreated",
+        age: "21",
+        ageBracket: "18-24",
+        businessUnit: "mlicore",
+        country: "India",
+        countryCode: "+91",
+        deviceType: "desktop",
+        dob: "MTIvMDMvMjAwNQ==",
+        equoteNo: "1860WFFU",
+        gender: "M",
+        id: "s8RRTUV...",
+        incomeRange: "<5",
+        influencerCategory: "website direct",
+        influencerChannel: "167",
+        influencerCompanyCode: "direct natural",
+        influencerSourceCode: "online application(neo)",
+        isDirect: "y",
+        isExistingCustomer: "n",
+        journey: "ecomm",
+        leadSource: "Term Lead Page",
+        leadSourcePagePath: "https://www.axismaxlife.com/term-insurance-plans/premium-calculator",
+        networkType: "4g",
+        nriStatus: "n",
+        pageName: "mlicore|journey|term|quote",
+        pageSubType: "term",
+        pageType: "journey",
+        pageUrlCustom: "https://www.axismaxlife.com/term-insurance-plans/premium-calculator",
+        phoneNumber: "Njc4OTAwOTg3Ng==",
+        smokerStatus: "n",
+        userId: "Njc4OTAwOTg3Ng==",
+        utmCode: "1111"
+    });
+}
+
+function fireQuotePageLoad() {
+    window.dataLayer.push({
+        event: "term_quotepageload",
+        age: "21",
+        ageBracket: "18-24",
+        businessUnit: "mlicore",
+        country: "India",
+        countryCode: "+91",
+        cwylCode: "LJiQ53zKk70pX+lho2xkcg==",
+        deviceType: "desktop",
+        dob: "MTIvMDMvMjAwNQ==",
+        education: "tenthpass",
+        equoteNo: "1860WFFU",
+        gender: "M",
+        incomeProof: "n",
+        incomeRange: "<5",
+        influencerCategory: "website direct",
+        influencerChannel: "167",
+        influencerCompanyCode: "direct natural",
+        influencerSourceCode: "online application(neo)",
+        isDiabetic: "n",
+        isDirect: "y",
+        isExistingCustomer: "n",
+        journey: "ecomm",
+        leadId: "94111860",
+        maritalStatus: "single",
+        networkType: "4g",
+        nriStatus: "n",
+        occupation: "selfEmployed",
+        pageName: "mlicore|journey|term|quote",
+        pageSubType: "term",
+        pageType: "journey",
+        pageUrlCustom: "https://www.axismaxlife.com/term-insurance-plans/premium-calculator",
+        paymentType: "regular-pay",
+        preferredLanguage: "hindi",
+        productCode: "TSTRCR",
+        productSelected: "Axis Max Life Smart Term Plan Plus",
+        productVariant: "life cover",
+        smokerStatus: "n",
+        stage: "term_quotepageload",
+        userId: "Njc4OTAwOTg3Ng==",
+        utmCode: "1111"
+    });
+}
+
+function fireQuotePlanProceed() {
+    window.dataLayer.push({
+        event: "term_quoteplanproceed",
+        stage: "term_quoteplanproceed",
+        age: "21",
+        leadId: "94113053",
+        pageName: "mlicore|journey|term|quote",
+        productCode: "TSTRCR",
+        productSelected: "Axis Max Life Smart Term Plan Plus",
+        productVariant: "life cover",
+        businessUnit: "mlicore",
+        userId: "Njc4OTAwOTg3Ng==",
+        utmCode: "1111"
+    });
+}
+
+function fireRiderPageLoad() {
+    window.dataLayer.push({
+        event: "term_riderpageload",
+        stage: "term_riderpageload",
+        age: "21",
+        annualPremium: "4745.51",
+        businessUnit: "mlicore",
+        leadId: "94113053",
+        pageName: "mlicore|journey|term|rider",
+        pageSubType: "term",
+        pageType: "journey",
+        paymentTerm: "39",
+        premium: "417.605",
+        productCode: "TSTRCR",
+        productSelected: "Axis Max Life Smart Term Plan Plus",
+        productVariant: "life cover",
+        sumAssured: "50 Lakhs",
+        sumAssuredAbsolute: "5000000",
+        userId: "Njc4OTAwOTg3Ng==",
+        utmCode: "1111"
+    });
+}
+
+function fireQuoteCreated() {
+    window.dataLayer.push({
+        event: "term_quotecreated",
+        stage: "term_quotecreated",
+        age: "21",
+        annualPremium: "4745.51",
+        businessUnit: "mlicore",
+        leadId: "94113053",
+        pageName: "mlicore|journey|term|rider",
+        premium: "439.135",
+        riderStatus: "y",
+        riderWop: "y",
+        smart_cover: "n",
+        sumAssured: "50 Lakhs",
+        sumAssuredAbsolute: "5000000",
+        totalPremiumWithoutGst: "439.135",
+        userId: "Njc4OTAwOTg3Ng==",
+        utmCode: "1111"
+    });
+}
+
+document.getElementById("leadBtn").onclick = function() {
+    fireLeadCreated();
+    navigate("quotePage", "/term-insurance/quote");
+    fireQuotePageLoad();
+};
+
+document.getElementById("quoteBtn").onclick = function() {
+    fireQuotePlanProceed();
+    navigate("riderPage", "/term-insurance/rider");
+    fireRiderPageLoad();
+};
+
+document.getElementById("riderBtn").onclick = function() {
+    fireQuoteCreated();
+    alert("Funnel Complete!");
+};
+
+window.onpopstate = function() {
+    var path = window.location.pathname;
+
+    if (path === "/term-insurance/quote") {
+        showPage("quotePage");
+    } else if (path === "/term-insurance/rider") {
+        showPage("riderPage");
+    } else {
+        showPage("leadPage");
+    }
+};
+
+(function initializeApp() {
+    var path = window.location.pathname;
+
+    if (path === "/term-insurance/quote") {
+        showPage("quotePage");
+        fireQuotePageLoad();
+    } else if (path === "/term-insurance/rider") {
+        showPage("riderPage");
+        fireRiderPageLoad();
+    } else {
+        if (path !== "/term-insurance") {
+            history.replaceState({}, "", "/term-insurance");
+        }
+        showPage("leadPage");
+        fireLeadPageLoad();
+    }
+})();
 </script>
 
 </body>
